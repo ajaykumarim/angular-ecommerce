@@ -1,0 +1,188 @@
+/* h1,button,p,label{
+    font-family: "REM", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+.container {
+    max-width: 400px;
+    margin: 50px auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 130px;
+  }
+  
+  .login-form {
+    padding: 10px 20px 20px 20px;
+  }
+  
+  .glass-morphism {
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(10px);
+  }
+  
+  .input-field {
+    width: 93.5%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border: 1px solid rgb(186, 186, 186);
+  }
+  .input-field:focus{
+    outline: rgb(235, 74, 74);
+    border: 1px solid rgb(235, 74, 74);
+  }
+  
+  
+  .button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(235, 74, 74);
+    color: #fff; 
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+  }
+  
+  .button:hover {
+    background-color: rgb(255, 54, 54); 
+  }
+  
+
+  .button1 {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(235, 74, 74);
+    color: #fff; 
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+  }
+  
+  .button1:hover {
+    background-color: rgb(255, 54, 54); 
+  }
+  .btn1-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  } */
+
+
+
+
+
+  h1,button,p,label,input{
+    font-family: "REM", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.background-img{
+    background-image: url("https://img.freepik.com/free-photo/red-shopping-bags-with-black-friday-sticker_23-2148288208.jpg?w=1060&t=st=1709441312~exp=1709441912~hmac=918d86eb079223ae74c836bb9dc8f564e25d43923d26fb77db3d3ee4117f2253");
+    /* background-color: rgb(235, 74, 74); */
+    /* background-color: rgb(31, 31, 31); */
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+  
+  .login-form {
+    padding: 10px 20px 20px 20px;
+  }
+  
+  .glass-morphism {
+    background-color: rgba(0, 0, 0, 0.692); 
+    background-color: rgba(188, 188, 188, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 20%;
+    left: 34%;
+    z-index: 999;
+    width: 35%;
+    height: 60%;
+    padding: 20px;
+  }
+  label{
+    color: rgba(255, 255, 255, 0.546);
+  }
+  #input-space{
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .input-field {
+    width: 95.5%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border: 1px solid rgb(107, 107, 107);
+  }
+  .input-field:focus{
+    outline: rgb(235, 74, 74);
+    border: 1px solid rgb(235, 74, 74);
+  }
+  
+  
+  .button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(235, 74, 74);
+    color: #fff; 
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+  }
+  
+  .button:hover {
+    background-color: rgb(255, 54, 54); 
+  }
+  
+
+  .button1 {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(235, 74, 74);
+    color: #fff; 
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+  }
+  
+  .button1:hover {
+    background-color: rgb(255, 54, 54); 
+  }
+  .btn1-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #space{
+    margin-bottom: 30px;
+  }
+  #space1{
+    margin-bottom: 20px;
+  }

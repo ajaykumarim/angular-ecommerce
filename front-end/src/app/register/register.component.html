@@ -1,0 +1,22 @@
+<!-- Register form -->
+<div class="background-img"></div>
+<div class="container">
+    <form class="login-form glass-morphism" (submit)="registerFunction()">
+      <h1>Register:</h1>
+      <div>
+        <label>Enter the email id:</label>
+        <input class="input-field" name="userEmail" (input)="userEmail=$any($event.target).value" type="email"/>
+      </div>
+      <div>
+        <label>Enter the Username:</label>
+        <input class="input-field" name="userName" (input)="userName=$any($event.target).value" type="text"/>
+      </div>
+      <div>
+        <label>Enter the password:</label>
+        <input id="space" class="input-field" name="userPass" (input)="userPass=$any($event.target).value" type="password"/>
+      </div>
+      <button id="space1" class="button">Register</button>
+      <button routerLink="" class="button">Cancel</button>
+    </form>
+  </div>
+  

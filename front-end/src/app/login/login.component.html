@@ -1,0 +1,46 @@
+<!-- User login -->
+<div class="background-img"></div>
+<div *ngIf="loginCondition" class="container">
+    <form class="login-form glass-morphism" (submit)="loginFunction()">
+      <h1>Login:</h1>
+      <div>
+        <label>Enter the email id:</label>
+        <input class="input-field" name="userEmail" [(ngModel)]="userEmail" type="email"/>
+      </div>
+      <div>
+        <label>Enter the Username:</label>
+        <input class="input-field" name="userName" [(ngModel)]="userName" type="text"/>
+      </div>
+      <div>
+        <label>Enter the password:</label>
+        <input  class="input-field" name="userPass" [(ngModel)]="userPass" type="password"/>
+      </div>
+      <button id="input-space" class="button">Login</button>
+      <div class="btn1-div">
+      <button routerLink="register" class="button1">Register</button>
+      <button (click)="loginCondition=false" class="button1">Admin login</button>
+      </div>
+    </form>
+  </div>
+  
+  <!-- Admin login -->
+  <div *ngIf="!loginCondition" class="container">
+    <form class="login-form glass-morphism" (submit)="AdminLoginFunction()">
+      <h1>Admin Login:</h1>
+      <div>
+        <label>Enter the email id:</label>
+        <input class="input-field" name="userEmail" [(ngModel)]="userEmail" type="email"/>
+      </div>
+      <div>
+        <label>Enter the Username:</label>
+        <input class="input-field" name="userName" [(ngModel)]="userName" type="text"/>
+      </div>
+      <div>
+        <label>Enter the password:</label>
+        <input id="space"  class="input-field" name="userPass" [(ngModel)]="userPass" type="password"/>
+      </div>
+      <button id="space1" class="button">Login</button>
+      <button  (click)="loginCondition=true" class="button">Back</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,23 @@
+<header class="header-block">
+    <div>
+        <img src="../assets/logo2.webp"/>
+    </div>
+    <div class="header-right">
+        <div class="icon-div">
+            <i (click)="MoveToHome()"  class="fa-solid fa-house fa-xl icon"></i>
+            <span class="icon-text">home</span>
+        </div>
+        <div *ngIf="isAdmin=='true'"  class="icon-div">
+            <i  routerLink="/adminpanel" class="fas fa-user fa-xl icon"></i>
+            <span class="icon-text">Admin</span>
+        </div>
+        <div *ngIf="isAdmin!='true'" class="icon-div">
+            <i (click)="MoveToCart()" class="fa-solid fa-cart-shopping fa-xl icon"></i>
+            <span class="icon-text">cart</span>
+        </div>
+        <div class="icon-div">
+            <i routerLink="" class="fa-solid fa-arrow-right-from-bracket fa-xl icon"></i>
+            <span class="icon-text">out</span>
+        </div>
+    </div>
+</header>

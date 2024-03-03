@@ -1,0 +1,158 @@
+button,p{
+    font-family: "REM", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+.product-card{
+   display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px 150px;
+    justify-content: center;
+}
+.product{
+    background-color: white;
+    padding: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 10px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+    overflow: hidden;
+}
+.product:hover{ 
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+.img-div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.product-image{
+    /* height: 150px;
+    width: 100%; */
+    height: 150px;
+    width: 55%;
+    transition: all 0.4s ;
+}
+.product:hover .product-image{
+    transform: scale(1.1);
+    transform-origin: center;
+}
+.top{
+    margin-top: 50px;
+    background-color: rgb(255, 208, 208);
+}
+.prod-name{
+    /* text-decoration: underline; */
+    color: rgb(235, 74, 74);
+    font-weight: bold;
+}
+.image-bg{
+    background-color: rgb(45, 45, 45);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    /* width: 150px; */
+}
+.cart-btn{
+    background-color: rgb(235, 74, 74);
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+.cart-btn:hover{
+    background-color: rgb(255, 63, 63);
+}
+.background{
+    background-color: rgb(255, 240, 240);
+    padding-top: 60px;
+    /* height: 100%; */
+    min-height: 100vh;
+    max-height: fit-content;
+}
+.cart-btn-disable{
+    background-color: rgb(255, 200, 200);
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: not-allowed;
+}
+
+
+
+/* cart */
+
+
+.back-btn-div{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+.fav-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-right: 500px;
+    margin-left: 150px; */
+    padding-right: 500px;
+    padding-left: 100px;
+    border-bottom: 1px solid grey;
+    padding-top: 10px;
+  }
+.fav-div1{
+    width: 200px;
+}
+.quantity-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.fav-img{
+    height: 100px;
+    width: 100px;
+  }
+  .quantity-block{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .quantity-btn{
+    border: none;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: green;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    transition: all 0.2s;
+  }
+  .quantity-btn:hover{
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border: 1px solid rgb(192, 192, 192);
+    background-color: white;
+    color: green;
+  }
+  .fav-btn{
+    color: rgb(235, 74, 74);
+    border: none;
+    margin: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    transition: all 0.2s;
+  }
+
+  .fav-btn:hover{
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border: 1px solid rgb(192, 192, 192);
+    background-color: white;
+    color: red;
+  }

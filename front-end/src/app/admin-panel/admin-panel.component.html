@@ -1,0 +1,47 @@
+<div [class]="editBar||addBar?'blur':'main-div'">
+    <div class="btn-div">
+        <button class="add-btn" routerLink="/home">BACK</button>
+        <button class="add-btn" (click)="addBar=true">Add Product</button>
+    </div>
+
+    <div class="admin-prod-div" >
+        <div class="prod-div" *ngFor="let product of products">
+            <img class="admin-img" src={{product.imagePath}} />
+            <p >Product Name:{{product.name}}</p>
+            <p>Price:{{product.price}}</p>
+            <p>Quantity:{{product.quantity}}</p>
+            <div class="ed-del-div">
+                <button class="edit" (click)="editFunction(product) ">Edit</button>
+                <button class="delete" (click)="deleteFunction(product.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div [class]="editBar?'show-edit-bar':'hide-edit-bar'">
+    <div class="cancel-div">
+        <i (click)="editcancel()" class="fa-solid fa-xmark cancel"></i>
+    </div>
+    <p>Product Name:</p>
+    <input class="input-field" value={{selectedName}} name="editedName" [(ngModel)]="editedName" />
+    <p>Product Price:</p>
+    <input class="input-field" value={{selectedPrice}} name="editedPrice" [(ngModel)]="editedPrice" />
+    <p>Product Image:</p>
+    <input class="input-field" value={{selectedPath}} name="editedPath" [(ngModel)]="editedPath" />
+    <p>Product Quantity:</p>
+    <input class="input-field" value={{selectedQuantity}} [(ngModel)]="editedQuantity" />
+    <button class="button" (click)="editProducts()">Change</button>
+</div>
+<div [class]="addBar?'show-add-bar':'hide-add-bar'">
+    <div class="cancel-div">
+        <i (click)="addcancel()" class="fa-solid fa-xmark cancel"></i>
+    </div>
+    <p>Product Name:</p>
+    <input class="input-field" name="addName" [(ngModel)]="addName" />
+    <p>Product Price:</p>
+    <input class="input-field" name="addPrice" [(ngModel)]="addPrice" />
+    <p>Product Image:</p>
+    <input class="input-field" name="addPath" [(ngModel)]="addPath" />
+    <p>Product Quantity:</p>
+    <input class="input-field" name="addQuantity" [(ngModel)]="addQuantity" />
+    <button class="button" (click)="addProducts()">Add</button>
+</div>

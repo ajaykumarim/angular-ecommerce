@@ -1,0 +1,156 @@
+p,button,input{
+    font-family: "REM", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.admin-img{
+    height: 200px;
+    width: 240px;
+    border-radius: 10px;
+}
+.hide-edit-bar{
+    display: none;
+}
+.show-edit-bar{
+    display: block;
+    position: fixed;
+    top: 16%;
+    right: 33%;
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+}
+.blur{
+    /* opacity: 0.5; */
+    /* background-color: rgba(0, 0, 0, 0.76);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: inherit; */
+
+    filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+.hide-add-bar{
+    display: none;
+}
+.show-add-bar{
+    display: block;
+    position: fixed;
+    top: 16%;
+    right: 33%;
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+}
+.admin-prod-div{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.btn-div{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.ed-del-div{
+
+}
+.input-field {
+    width: 93.5%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border: 1px solid rgb(186, 186, 186);
+  }
+  .input-field:focus{
+    outline: rgb(235, 74, 74);
+    border: 1px solid rgb(235, 74, 74);
+  }
+  .button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(235, 74, 74);
+    color: #fff; 
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+    margin-top: 15px;
+  }
+  
+  .button:hover {
+    background-color: rgb(255, 54, 54); 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .cancel{
+    color: red;
+  }
+  .cancel-div{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transition: all 0.2s;
+}
+.cancel-div:hover{
+   transform: scale(1.3);
+}
+
+.prod-div{
+    background-color: rgb(235, 74, 74);
+    padding: 10px;
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 10px;
+    width: 240px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+}
+.edit{
+    width: 60px;
+    margin-right: 10px;
+    color: green;
+    border: none;
+    background-color: white;
+    border-radius: 25px;
+    padding: 3px 0px;
+    font-size: 12px;
+    border: 1px solid rgb(186, 186, 186);
+    cursor: pointer;
+}
+.delete{
+    width: 60px;
+    color: red;
+    border: none;
+    background-color: white;
+    border-radius: 25px;
+    padding: 3px 0px;
+    font-size: 12px;
+    border: 1px solid rgb(186, 186, 186);
+    cursor: pointer;
+}
+.add-btn{
+    background-color: rgb(235, 74, 74);
+    border: none;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 3px 5px;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+}
+.main-div{
+    background-color: rgb(255, 240, 240);
+}
