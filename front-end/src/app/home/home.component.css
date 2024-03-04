@@ -131,7 +131,7 @@ button,p{
     color: green;
     cursor: pointer;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    transition: all 0.2s;
+    transition: all 0.5s;
   }
   .quantity-btn:hover{
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -147,7 +147,7 @@ button,p{
     border-radius: 25px;
     cursor: pointer;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    transition: all 0.2s;
+    transition: all 0.5s;
   }
 
   .fav-btn:hover{

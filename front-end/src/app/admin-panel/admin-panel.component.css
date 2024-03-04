@@ -142,14 +142,17 @@ p,button,input{
     cursor: pointer;
 }
 .add-btn{
-    background-color: rgb(235, 74, 74);
+    /* background-color: rgb(235, 74, 74); */
+    background-color: black;
     border: none;
     margin-right: 10px;
     margin-top: 10px;
-    padding: 3px 5px;
+    padding: 5px 7px;
     border-radius: 10px;
     color: white;
-    font-size: 12px;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .main-div{
     background-color: rgb(255, 240, 240);

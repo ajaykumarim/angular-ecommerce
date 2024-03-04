@@ -5,7 +5,6 @@ import { RouterLink } from '@angular/router';
 import axios from 'axios';
 import { HeaderComponent } from '../header/header.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { error } from 'console';
 
 @Component({
   selector: 'app-home',
@@ -20,10 +19,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   favourite = false;
   filteredProducts: any;
   requiredQuantity:any;
-  arry:any[]=[]
+  totalPrice!:any;
   constructor(private http: HttpClient) {
-    this.getData();
-  
+    this.getData(); 
   }
   ngAfterViewInit(): void {
     
@@ -43,8 +41,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       withCredentials: true
     });
     const data = await response.data
-    this.products = data.products.sort((a:any, b:any) => a.name.localeCompare(b.name));
-    
+    this.products = data.products.sort((a:any, b:any) => a.name.localeCompare(b.name));    
   }
 
   NewFav = async () => {
@@ -58,7 +55,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.requiredQuantity=await sortedQuantity
     let an = await ar.map((a: any) => a.productName)
     this.filteredProducts=await this.products?.filter((product: any) => an.includes(product.name));
-    // this.filteredProducts =sortedFav.sort((a:any, b:any) => a.name.localeCompare(b.name)); 
+
+    this.totalPrice=await this.filteredProducts?.reduce((acc:any,prod:any)=>{
+      let quantity=this.requiredQuantity.filter((a:any)=>a.productName==prod.name)[0].quantity
+      let individulalTotal=quantity*prod.price
+      return acc + individulalTotal
+    },0)
   }
 
   fav1(val: boolean) {
@@ -72,6 +74,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.http.post("http://localhost:5000/api/shopping/username/favourites", {
           "user": this.cuUser,
           "productName": e,
+        },{
+          withCredentials: true
         }).subscribe((response) => {
           console.log(response)
           this.getData();
@@ -83,7 +87,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   removeFavourite(e:string){
-    this.http.delete(`http://localhost:5000/api/shopping/username/favourites?param1=${this.cuUser}&param2=${e}`).subscribe((response) => {
+    this.http.delete(`http://localhost:5000/api/shopping/username/favourites?param1=${this.cuUser}&param2=${e}`,{
+      withCredentials: true
+    }).subscribe((response) => {
           console.log(response)
           this.getData();
           setTimeout(()=>{
@@ -97,6 +103,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       "user":this.cuUser,
       "productName":productName,
       "calc":"plus"
+    },{
+      withCredentials: true
     }).subscribe((response:any)=>{
     this.getData();
           setTimeout(()=>{
@@ -114,6 +122,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
         "user":this.cuUser,
         "productName":productName,
         "calc":"minus"
+      },{
+        withCredentials: true
       }).subscribe((response)=>{
         console.log(response)
         this.getData();
@@ -128,4 +138,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       })
 
   }
+
+  
+  
 }

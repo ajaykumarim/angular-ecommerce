@@ -17,14 +17,20 @@ export class AdminPanelComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.getProducts().subscribe((response) => {
-      const res: any = response
-      this.products = res.products
-    })
+    this.getProducts()
+    // .subscribe((response) => {
+    //   const res: any = response
+    //   this.products = res.products
+    // })
   }
 
   getProducts() {
-    return this.http.get('http://localhost:5000/api/shopping')
+    return this.http.get('http://localhost:5000/api/shopping',{
+      withCredentials: true
+    }).subscribe((response) => {
+      const res: any = response
+      this.products = res.products
+    })
   }
   selectedProduct!: product;
 
@@ -56,11 +62,14 @@ export class AdminPanelComponent implements OnInit {
         price: this.editedPrice != undefined ? this.editedPrice : this.selectedPrice,
         quantity: this.editedQuantity != undefined ? this.editedQuantity : this.selectedQuantity,
         imagePath: this.editedPath != undefined ? this.editedPath : this.selectedPath,
+      },{
+        withCredentials: true
       }).subscribe((response) => {
         console.log(response)
         alert(response.message)
         this.editBar = false;
-        location.reload()
+        this.getProducts()
+        // location.reload()
       })
     } else {
       alert("The fields should not be empty!")
@@ -75,9 +84,13 @@ export class AdminPanelComponent implements OnInit {
     this.editBar = false;
   }
   deleteFunction(id: number) {
-    this.http.delete(`http://localhost:5000/api/shopping/${id}`).subscribe((response) => {
+    this.http.delete(`http://localhost:5000/api/shopping/${id}`,{
+      withCredentials: true
+    }).subscribe((response) => {
       console.log(response)
-      location.reload()
+      
+      // location.reload()
+      this.getProducts()
     })
   }
   addBar = false;
@@ -101,9 +114,14 @@ export class AdminPanelComponent implements OnInit {
           "price": this.addPrice,
           "quantity": this.addQuantity,
           "imagePath": this.addPath,
+        },{
+          withCredentials: true
         }).subscribe((response) => {
           console.log(response)
-          location.reload()
+          this.addBar=false;
+          this.getProducts()
+          // location.reload()
+
         })
       } else {
         alert("The fields should not be empty!")
@@ -120,3 +138,4 @@ class product {
   quantity!: number;
   imagePath!: string;
 }
+

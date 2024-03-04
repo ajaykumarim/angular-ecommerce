@@ -14,10 +14,30 @@ export class RegisterComponent {
   userName:string='';
   userEmail:string='';
   userPass:string='';
+
+  emailVerify:string="";
+  userNameVerify:string=""
+  passwordVerify:string=""
+  verifyFunction() {
+    if(this.userEmail==""){
+      this.emailVerify="*Email field should not be empty"
+    }else{
+      this.emailVerify=""
+    }
+    if(this.userName==""){
+      this.userNameVerify="*name field should not be empty"
+    }else{
+      this.userNameVerify=""
+    }
+    if(this.userPass==""){
+      this.passwordVerify="*password field should not be empty"
+    }else if(this.userPass.length<5){
+      this.passwordVerify="*password should have atleast 5 characters"
+    }else{
+      this.passwordVerify=""
+    }
+  }
   registerFunction=async()=>{
-    console.log(this.userEmail)
-    console.log(this.userName)
-    console.log(this.userPass)
     
     if ((this.userEmail!=='') &&(this.userName !== '') && (this.userPass !== '')) {
       try {

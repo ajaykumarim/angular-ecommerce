@@ -5,9 +5,9 @@ h1,button,p,label,input{
   font-style: normal;
 }
 .background-img{
-    background-image: url("https://img.freepik.com/free-photo/red-shopping-bags-with-black-friday-sticker_23-2148288208.jpg?w=1060&t=st=1709441312~exp=1709441912~hmac=918d86eb079223ae74c836bb9dc8f564e25d43923d26fb77db3d3ee4117f2253");
+    /* background-image: url("https://img.freepik.com/free-photo/red-shopping-bags-with-black-friday-sticker_23-2148288208.jpg?w=1060&t=st=1709441312~exp=1709441912~hmac=918d86eb079223ae74c836bb9dc8f564e25d43923d26fb77db3d3ee4117f2253"); */
     /* background-color: rgb(235, 74, 74); */
-    /* background-color: rgb(31, 31, 31); */
+    background-color: rgb(31, 31, 31);
     width: 100vw;
     height: 100vh;
     background-position: center;
@@ -101,4 +101,8 @@ h1,button,p,label,input{
   }
   #space1{
     margin-bottom: 20px;
+  }
+  .verification{
+    color: red;
+    font-size: 10px;
   }

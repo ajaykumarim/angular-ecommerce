@@ -5,15 +5,18 @@
       <h1>Login:</h1>
       <div>
         <label>Enter the email id:</label>
-        <input class="input-field" name="userEmail" [(ngModel)]="userEmail" type="email"/>
-      </div>
+        <input (input)="verifyFunction()" class="input-field" name="userEmail" [(ngModel)]="userEmail" type="email" />
+        <p class="verification">{{emailVerify}}</p>
+      </div> 
       <div>
         <label>Enter the Username:</label>
-        <input class="input-field" name="userName" [(ngModel)]="userName" type="text"/>
+        <input (input)="verifyFunction()" class="input-field" name="userName" [(ngModel)]="userName" type="text"/>
+        <p class="verification">{{userNameVerify}}</p>
       </div>
       <div>
         <label>Enter the password:</label>
-        <input  class="input-field" name="userPass" [(ngModel)]="userPass" type="password"/>
+        <input (input)="verifyFunction()" class="input-field" name="userPass" [(ngModel)]="userPass" type="password"/>
+        <p class="verification">{{passwordVerify}}</p>
       </div>
       <button id="input-space" class="button">Login</button>
       <div class="btn1-div">

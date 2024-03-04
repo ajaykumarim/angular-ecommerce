@@ -23,10 +23,27 @@ export class LoginComponent implements OnInit{
     ngOnInit(): void {
           
     }
+    emailVerify:string ="";
+    userNameVerify:string="";
+    passwordVerify:string="";
+    verifyFunction() {
+      if(this.userEmail==""){
+        this.emailVerify="*Email field should not be empty"
+      }else{
+        this.emailVerify=""
+      }
+      if(this.userName==""){
+        this.userNameVerify="*name field should not be empty"
+      }else{
+        this.userNameVerify=""
+      }
+      if(this.userPass==""){
+        this.passwordVerify="*password field should not be empty"
+      }else{
+        this.passwordVerify=""
+      }
+    }
     loginFunction= async()=>{
-      // console.log(this.userName)
-      // console.log(this.userPass)
-      // console.log(this.userEmail)
       try{
           const response=await axios.post('http://localhost:5000/api/shopping/login',{
             email:this.userEmail,
@@ -35,11 +52,11 @@ export class LoginComponent implements OnInit{
           },{
             headers:{
                 'Content-Type':'application/json'
-            }
+            },
+            withCredentials: true
           })
           const res=await response.data;
           const data=await res.usersData;
-          // console.log(data)
           
           if(data!=undefined&&!data.isAdmin){
             localStorage.setItem('isAdmin',JSON.stringify(data.isAdmin))
@@ -51,7 +68,7 @@ export class LoginComponent implements OnInit{
           
       }catch(e){
         console.log(e)
-        alert("Enter a valid email")
+        alert("Enter valid details!")
       }finally{
         this.userEmail=''
         this.userName=''
@@ -62,9 +79,6 @@ export class LoginComponent implements OnInit{
 
 
     AdminLoginFunction= async()=>{
-      // console.log(this.userName)
-      // console.log(this.userPass)
-      // console.log(this.userEmail)
       try{
           const response=await axios.post('http://localhost:5000/api/shopping/login',{
             email:this.userEmail,
@@ -73,11 +87,11 @@ export class LoginComponent implements OnInit{
           },{
             headers:{
                 'Content-Type':'application/json'
-            }
+            },
+            withCredentials: true
           })
           const res=await response.data;
           const data=await res.usersData;
-          // console.log(data)
           
           if(data!=undefined&&data.isAdmin){
             localStorage.setItem('isAdmin',JSON.stringify(data.isAdmin))
@@ -97,5 +111,6 @@ export class LoginComponent implements OnInit{
       }
      
     }
+   
     
 }
